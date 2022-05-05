@@ -236,6 +236,7 @@ input, select, textarea {
 		text-align: right;
 	}
 
+
 /* Row */
 
 	.row {
@@ -3312,5 +3313,55 @@ input, select, textarea {
 			.button {
 				padding: 0;
 			}
+
+			/* Center iframe with css */
+		center{
+			text-align: center;
+		}
+		.iframewrapper { 
+				float: none;
+				clear: both;
+				width: 850px;
+				position: relative;
+				padding-bottom: 50.00%;
+				padding-top: 25px;
+				height: 0;
+			margin: 0 auto;
+			}
+			.iframewrapper iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			max-width: 900px;
+			max-height: 600px;
+			}
+
+	  * {
+		  box-sizing: border-box;
+			}
+	  /* four containers */
+	  .column2 {
+		  float: left;
+		  width: 25.00%;
+		  padding: 10px;
+		  min-height: 280px;
+		}
+
+		/* Clear floats after image containers */
+		.row2::after {
+		  content: "";
+		  clear: both;
+		  display: table;
+		}			  
+
+
+		.my-box {
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  align-items: center;
+		}
 
 	}
