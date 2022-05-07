@@ -59,7 +59,14 @@
 								<div class="container">
 									<header class="major">
 										<h2>Interplay of traffic and weather in Copenhagen</h2>
-										<p>Introduction</p>
+										<div>
+											<h3>Introduction</h3>
+											<p>
+												The people of Copenhagen love their bicycles. Combined, they cycle over a million kilometers every single day <a href="https://web.archive.org/web/20190707123514/https://www.kk.dk/indhold/62-af-koebenhavnerne-cykler-til-arbejde-og-uddannelse" target="blank">[1]</a>. And it shouldn't come as a surprise, as the city is the capital of the fourth flattest country in the world - with an average elevation of just 34 meters - making it the perfect country for cyclists. Cycling is very much encouraged in the city, with around 350 km of cycle tracks, and more to be added in the coming years. 
+												<br><br>
+												We are interested in investigating just how committed Danes are to their cycling. We have gathered data on counts of bicycles and cars from a number of counting posts in the city from 2014. Additionally, we have gathered data about the weather from 2014, and want to combine those two datasets to find out whether the weather - and more so, which weather conditions - affect the traffic of both bikes and cars. Are there fewer bicycles and more cars when there's rain or high winds? Likewise, are people liklier to hop on their bikes and leave the car at home when the temperature is high?
+											</p>
+										</div>
 									</header>
 									<p> </p>
 								</div>
@@ -69,12 +76,18 @@
 							<section id="two">
 								<div class="container">
 									<h3>The data</h3>
-									<p> </p>
-										<center>
-											<div class="iframewrapper ">
-												<iframe width="800" height="450" src="map.html" frameborder="0" allowfullscreen align=middle></iframe>
-											</div>
-										</center>
+										<p>
+											The traffic data is gathered from <a href="https://www.opendata.dk/city-of-copenhagen/trafiktal" target="blank">Københavns Kommune</a>.
+											<br><br>
+											The traffic numbers are collected from counting posts located on various streets and bicycle routes around the city of Copenhagen. There are data from nine counters on bicycle routes, and from 14 posts on streets counting cars. The data is from the year 2014 and is ordered by date and hour. The map shows the locations of the counting posts.
+											<br><br>
+											We collected the weather data from the <a href="https://www.visualcrossing.com/weather/weather-data-services" target="blank">Visual Crossing Weather API</a>. It contains information about the weather for each day in 2014. The weather data consists of information about precipitation, temperature, windspeed and wind direction, UV index and humidity among other things. 
+											<br><br>
+											Our plan is to concatenate these two datasets and analyse them to get a deeper understanding of the traffic in Copenhagen, and try to predict the traffic based on the various factors in our data. 
+										</p>
+										<div class="ifraewrapper ">
+											<iframe width="800" height="450" src="map.html" frameborder="0" allowfullscreen align=middle></iframe>
+										</div>
 								<!--
 									<ul class="feature-icons">
 										<li class="icon solid fa-code">Write all the code</li>
