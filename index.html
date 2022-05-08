@@ -6,10 +6,11 @@
 -->
 <html>
 	<head>
-		<title>Read Only by HTML5 UP</title>
+		<title>Social Data - Final Project</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" href="images/favicon.ico">
 	</head>
 	<body class="is-preload">
 
@@ -25,11 +26,11 @@
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="#one" class="active">About</a></li>
-						<li><a href="#two">The data</a></li>
-						<li><a href="#three">Data Analysis</a></li>
-						<li><a href="#four">Conclusion</a></li>
-						<li><a href="#five">Code</a></li>
+						<li><a href="#about" class="active">About</a></li>
+						<li><a href="#data">The Data</a></li>
+						<li><a href="#dataAnalysis">Data Analysis</a></li>
+						<li><a href="#conclusion">Conclusion</a></li>
+						<li><a href="#code">Code</a></li>
 					</ul>
 				</nav>
 				<!--
@@ -52,13 +53,13 @@
 					<div id="main">
 
 						<!-- One -->
-							<section id="one">
+							<section id="about">
 								<div class="image main" data-position="center">
 									<img src="images/bike.jpeg" alt="" />
 								</div>
 								<div class="container">
 									<header class="major">
-										<h2>Interplay of traffic and weather in Copenhagen</h2>
+										<h2>Effect of weather on traffic in Copenhagen</h2>
 										<div>
 											<h3>Introduction</h3>
 											<p>
@@ -73,19 +74,19 @@
 							</section>
 
 						<!-- Two -->
-							<section id="two">
+							<section id="data">
 								<div class="container">
-									<h3>The data</h3>
+									<h3>The Data</h3>
 										<p>
 											The traffic data is gathered from <a href="https://www.opendata.dk/city-of-copenhagen/trafiktal" target="blank">Københavns Kommune</a>.
 											<br><br>
-											The traffic numbers are collected from counting posts located on various streets and bicycle routes around the city of Copenhagen. There are data from nine counters on bicycle routes, and from 14 posts on streets counting cars. The data is from the year 2014 and is ordered by date and hour. The map shows the locations of the counting posts.
+											The traffic numbers are collected from counting posts located on various streets and bicycle routes around the city of Copenhagen. There are data from nine counters on bicycle routes, and from 14 posts on streets counting cars. The data is from the year 2014 and is ordered by date and hour. The interactive map below shows the locations of the counting posts.
 											<br><br>
 											We collected the weather data from the <a href="https://www.visualcrossing.com/weather/weather-data-services" target="blank">Visual Crossing Weather API</a>. It contains information about the weather for each day in 2014. The weather data consists of information about precipitation, temperature, windspeed and wind direction, UV index and humidity among other things. 
 											<br><br>
 											Our plan is to concatenate these two datasets and analyse them to get a deeper understanding of the traffic in Copenhagen, and try to predict the traffic based on the various factors in our data. 
 										</p>
-										<div class="ifraewrapper ">
+										<div class="iframewrapper ">
 											<iframe width="800" height="450" src="map.html" frameborder="0" allowfullscreen align=middle></iframe>
 										</div>
 								<!--
@@ -102,32 +103,26 @@
 							</section>
 
 						<!-- Three -->
-							<section id="three">
+							<section id="dataAnalysis">
 								<div class="container">
 									<h3>Data analysis</h3>
 									<p> </p>
-									<div class="features">
 									<article>
-										<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-										<div class="inner">
-											<h4>Terraformed a small moon</h4>
-											<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+										<div class="text">
+										<h4>Difference between traffic in different weather conditions</h4>
+										<p>
+											We can now showcase the difference in car and bike count in high and low precipitation, windspeed and temperature. By splitting the data by precipitation or no precipitation, windspeed over 40m/s and under 40m/s and temperatures either side of 16°C, we can show the difference in the average count with a slope plot.
+										</p>
+										<div id="slope" class="image">
+											<img src="images/slope_chart.png" alt="Slope Chart" width="100%">
 										</div>
+										<p>
+											The slope chart shows how the number of cars and bikes differs according to different weather conditions. We can see that our data suggests that the car traffic decreases with higher precipitation, windspeed and temperature. Unsurprisingly, the number of bikes counted is lower when there is high windspeed and precipitation, but higher when the temperature is higher.
+										</p>
+										<p>
+											The question is then: Can we conclude, using this data, that these results are reliable? Is the difference in traffic between weather conditions maybe due to other factors? Applying a t-test on the data, we can determine if the difference is in fact significant, and not due to a chance or other reasons. This gives us the results that there is actually not a statistically significant difference between the number of cars in high and low windspeed and temperature, while there is significant difference between the car traffic in low precipitation and high precipitation. On the contrary, for the bicycle traffic, there is in fact a significant difference between the traffic numbers in high and low precipitation, windspeed and temperature. The people of Copenhagen are understandably more excited to ride their bikes to work or school if the weather is nice. The number of cars also goes down when it's raining, so it looks like people are just less likely to go out when it's raining. If seems strange though that the inhabitants of Copenhagen are not fond of rain - according to our data, there is some rain on two thirds of the days there.
+										</p>
 									    </article>
-										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Terraformed a small moon</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Snapped dark matter in the wild</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
-											</div>
-										</article>
 										<article>
 											<div>
 												<h4>Predicting bike traffic and important features.</h4>
@@ -173,18 +168,15 @@
 											<div></div>
 											<p>Next step is to find a model that fits out data and we see that it is a model based on decision trees. After we train the model we investigate it more to get the sense how it predicts a new datapoint and also to learn what seems to be the most important feature when predicting bike traffic. First we give the model a new datapoint, in the figure below we can see how one of the decision trees predicts the new data point. 
 											</p>
-										</div>
-										<center>
-											<a href="#" class="image"><img src="images/grein.svg" alt="" /></a>
-										</center>
-										
+											<a href="#"><img src="images/grein.svg" alt=""></a>	
+										</div>									
 									</article>
 									</div>
 								</div>
 							</section>
 
 						<!-- Four -->
-							<section id="four">
+							<section id="conclusion">
 								<div class="container">
 									<h3>Conclusion</h3>
 									<p> </p>
@@ -207,7 +199,7 @@
 								</div>
 							</section>
 						<!-- Five -->
-						<section id="five">
+						<section id="code">
 							<div class="container">
 								<h3>Code</h3>
 								<p> </p>
